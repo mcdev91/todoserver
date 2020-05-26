@@ -8,6 +8,16 @@ app.use(cors());
 app.use(express.json()); //req.body
 
 //ROUTES
+app.get("/", async (req, res) => {
+    try {
+        const allTodos = await pool.query("SELECT * FROM todo");
+        res.json(allTodos.rows);
+    } catch (error) {
+        console.error(error.message);
+
+    }
+})
+
 //create todo
 app.post("/todos", async (req, res) => {
     try {
