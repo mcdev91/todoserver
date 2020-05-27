@@ -32,14 +32,21 @@ app.post("/todos", async (req, res) => {
 })
 
 //get all todos
-app.get("/todos", async (req, res) => {
-    try {
-        const allTodos = await pool.query("SELECT * FROM todo");
-        res.json(allTodos.rows);
-    } catch (error) {
-        console.error(error.message);
+// app.get("/todos", async (req, res) => {
+//     try {
+//         const allTodos = await pool.query("SELECT * FROM todo");
+//         res.json(allTodos.rows);
+//     } catch (error) {
+//         console.error(error.message);
 
-    }
+//     }
+// })
+
+//
+app.get("/todos", async (req, res) => {
+    const allTodos = db.select('*').from('todo');
+    res.json(allTodos.rows);
+    console.log(allTodos);
 })
 
 //get a specific todo
