@@ -14,11 +14,11 @@ app.use(favicon(__dirname + './server.png'));
 
 //ROUTES
 app.get('/', (request, response) => {
-    response.json({ info: 'Node.js, Express, and Postgres API' })
+    response.json({ info: 'Node.js, Express, and Postgres API, Server is runnig :)' })
 });
 
 // //get all todos
-// app.get('/todos', db.getTodos);
+
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('server started');
