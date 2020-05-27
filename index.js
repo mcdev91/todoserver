@@ -12,8 +12,8 @@ app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
 });
 
-//get all todos
-app.get('/todos', db.getTodos);
+// //get all todos
+// app.get('/todos', db.getTodos);
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('server started');
