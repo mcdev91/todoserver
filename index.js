@@ -8,6 +8,9 @@ app.use(cors());
 app.use(express.json()); //req.body
 
 //ROUTES
+app.get('/', (request, response) => {
+    response.json({ info: 'Node.js, Express, and Postgres API' })
+  })
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('server started');
