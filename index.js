@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const pool = require("./db");
+const db = require('./db');
 
 //middlware
 app.use(cors());
@@ -13,14 +13,7 @@ app.get('/', (request, response) => {
 });
 
 //get all todos
-const getTodos = (request, response) => {
-    pool.query('SELECT * FROM todo', (error, results) => {
-        if (error) {
-            throw error
-        }
-        response.status(200).json(results.rows)
-    })
-}
+app.get('/todos', db.getTodos);
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('server started');
