@@ -7,7 +7,7 @@ const db = require('./db');
 //middlware
 app.use(cors());
 app.use(express.json()); //req.body
-app.use('/favicon.ico', express.static('images/favicon.ico'));
+app.use('/favicon.ico', express.static('./server.png'));
 
 //favicon
 app.use(favicon(__dirname + './server.png'));
