@@ -14,7 +14,7 @@ app.use(favicon(__dirname + './server.png'));
 
 //ROUTES
 app.get('/', (request, response) => {
-    response.json({ info: 'Node.js, Express, and Postgres API, Server is runninng :)' })
+    response.json({ info: 'Node.js, Express, and Postgres API, Server is running :)' })
 });
 
 // //get all todos
