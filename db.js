@@ -16,4 +16,4 @@ const getTodos = (request, response) => {
     })
 }
 
-module.exports = getTodos;
+module.exports = { getTodos };

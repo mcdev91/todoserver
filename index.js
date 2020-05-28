@@ -18,7 +18,7 @@ app.get('/', (request, response) => {
 });
 
 //get all todos
-app.get('/users', db.getTodos)
+app.get('/todos', db.getTodos)
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('server started');
