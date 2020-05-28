@@ -12,10 +12,8 @@ const getTodos = (request, response) => {
         if (error) {
             throw error
         }
-        response.status(200).json(results)
+        response.status(200).json(results.rows)
     })
 }
 
-module.exports = {
-    getTodos
-};
+module.exports = getTodos;
